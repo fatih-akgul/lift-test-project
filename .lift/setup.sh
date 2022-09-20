@@ -1,1 +1,1 @@
-apt install -y curl jq git
+apt install curl jq git
