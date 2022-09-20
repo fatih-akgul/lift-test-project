@@ -1,1 +1,2 @@
 customTools = [".lift/tool.sh"]
+setup = ".lift/setup.sh"
