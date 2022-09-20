@@ -4,7 +4,18 @@ function run() {
     echo '[ { "type" : "bad json", "file" : "test.txt", "line": 1, "message" : "Not JSON", "details_url": null } ]'
 }
 
-[[ "$3" = "version" ]] && echo "1"
-[[ "$3" = "applicable" ]] && echo "true"
-[[ "$3" = "run" ]] && run
-[[ -z "$3" ]] && echo '{ "version" : 1, "name" : "json-verifier" }'
+if [[ "$3" = "version" ]] ; then
+    echo "1"
+fi
+
+if [[ "$3" = "applicable" ]] ; then
+    echo "true"
+fi
+
+if [[ "$3" = "run" ]] ; then
+    run
+fi
+
+if [[ -z "$3" ]] ; then
+    echo '{ "version" : 1, "name" : "json-verifier" }'
+fi
