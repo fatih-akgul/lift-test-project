@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 function run() {
     for i in $(git ls-files | grep -v lift) ; do
         if ! jq $i >/dev/null 2>/dev/null ; then
