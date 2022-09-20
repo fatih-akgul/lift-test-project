@@ -1,1 +1,1 @@
-customTools = [ ".lift/tool.sh", ".lift/line-length.sh"]
+customTools = [".lift/line-length.sh"]
