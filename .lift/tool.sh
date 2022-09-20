@@ -1,31 +1,10 @@
-#!/usr/bin/env bash
-# dir=$1 but it is not needed
-commit=$2
-cmd=$3
-
-function version() {
-    echo 1
-}
-
-function applicable() {
-    echo "true"
-}
+#!/bin/bash
 
 function run() {
-    echo "[{ \"type\": \"Hello World\", \
-            \"message\": \"We are analyzing commit $commit\", \
-            \"file\": \"N/A\", \
-            \"line\": 0, \
-            \"details_url\": \"https://help.sonatype.com/lift/extending-lift\" \
-          }]"
+    echo '[ { "type" : "bad json", "file" : "test.txt", "line": 1, "message" : "Not JSON", "details_url": null } ]'
 }
 
-if [[ "$cmd" = "run" ]] ; then
-  run
-fi
-if [[ "$cmd" = "applicable" ]] ; then
-  applicable
-fi
-if [[ "$cmd" = "version" ]] ; then
-  version
-fi
+[[ "$3" = "version" ]] && echo "1"
+[[ "$3" = "applicable" ]] && echo "true"
+[[ "$3" = "run" ]] && run
+[[ -z "$3" ]] && echo '{ "version" : 1, "name" : "json-verifier" }'
