@@ -1,1 +1,2 @@
-apt install curl jq git
+#!/usr/bin/env bash
+apt install git
